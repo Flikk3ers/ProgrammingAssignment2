@@ -41,3 +41,27 @@ cacheSolve <- function(x, ...) {
         x$setInverse(inv)
 }
 
+# Below is an output of a test run I did with the above two functions 
+
+  ## create a random (invertible) matrix
+       # test_matrix = rbind(c(10, -1/2), c(-1/2, 10))
+  ## test the function using this matrix
+      # test_function = makeCacheMatrix(test_matrix)
+      # test_function$get()
+          # [,1] [,2]
+          # [1,] 10.0 -0.5
+          # [2,] -0.5 10.0
+
+  ## run the cacheSolve function
+      # cacheSolve(test_function)
+          # nothing to return seeing that there is no cache
+
+          # running it again will return the inverse of the matrix
+          # due to the fact that there is now something in the cache
+          # that the function can retrieve
+     
+      # cacheSolve(test_function)
+          # getting cached data
+          # [,1]        [,2]
+          # [1,] 0.100250627 0.005012531
+          # [2,] 0.005012531 0.100250627
